@@ -1,11 +1,15 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { testcontext } from "../../contexts/AuthContext";
 export const LoginForm = () => {
+  //Context
   const [loginForm, setLoginForm] = useState({ username: "", password: "" });
+  //Router
+  const history = useHistory();
+  //Local state
   const { username, password } = loginForm;
   const { loginUser } = useContext(AuthContext);
   const onChangeLoginForm = (event) =>
@@ -16,7 +20,10 @@ export const LoginForm = () => {
     console.log(AuthContext);
     try {
       const loginData = await loginUser(loginForm);
-      console.log(loginData);
+      if (loginData.success) {
+        history.push("/dashboard");
+      } else {
+      }
     } catch (error) {
       console.log(error);
     }

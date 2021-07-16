@@ -2,6 +2,7 @@ const express = require("express");
 const mongose = require("mongoose");
 const authRouter = require("./routers/auth");
 const postRouter = require("./routers/post");
+const cors = require("cors");
 require("dotenv").config();
 const connnectDB = async () => {
   try {
@@ -25,10 +26,14 @@ const connnectDB = async () => {
 };
 connnectDB();
 const app = express();
-app.use(express.json());
-app.get("/", (req, res) => res.send("Hello world"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // To parse the incoming requests with JSON payloads
+
+app.use(cors()); //and this
 app.use("/api/auth", authRouter);
 app.use("/api/post", postRouter);
 const PORT = 5000;
 
-app.listen(PORT, () => console.log("Server started"));
+app.listen(PORT, function () {
+  console.log(`CORS-enabled web server listening on port ${PORT}`);
+});
