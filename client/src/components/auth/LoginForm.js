@@ -60,7 +60,7 @@ export const LoginForm = () => {
         Dont have an account?
         <Link to="/register">
           <Button variant="info" size="sm" className="ml-2">
-            Register
+            Register an account
           </Button>
         </Link>
       </p>
