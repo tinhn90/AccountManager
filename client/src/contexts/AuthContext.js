@@ -2,7 +2,7 @@ import { createContext, useReducer, useEffect } from "react";
 import { authReducer } from "../reducers/authReducer";
 import { apiUrl, LOCAL_STORAGE_TOKEN_NAME } from "./constants";
 import axios from "axios";
-
+import setAuthToken from "../ultils/setAuthToken";
 export const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
@@ -15,7 +15,7 @@ const AuthContextProvider = ({ children }) => {
   // Authenticate user
   const loadUser = async () => {
     if (localStorage[LOCAL_STORAGE_TOKEN_NAME]) {
-      //setAuthToken(localStorage[LOCAL_STORAGE_TOKEN_NAME]);
+      setAuthToken(localStorage[LOCAL_STORAGE_TOKEN_NAME]);
     }
 
     try {
@@ -28,7 +28,7 @@ const AuthContextProvider = ({ children }) => {
       }
     } catch (error) {
       localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME);
-      //setAuthToken(null);
+      setAuthToken(null);
       dispatch({
         type: "SET_AUTH",
         payload: { isAuthenticated: false, user: null },
