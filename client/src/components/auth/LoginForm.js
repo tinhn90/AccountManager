@@ -3,7 +3,6 @@ import Form from "react-bootstrap/Form";
 import { Link, useHistory } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
-import { testcontext } from "../../contexts/AuthContext";
 export const LoginForm = () => {
   //Context
   const [loginForm, setLoginForm] = useState({ username: "", password: "" });
@@ -15,6 +14,7 @@ export const LoginForm = () => {
   const onChangeLoginForm = (event) =>
     setLoginForm({ ...loginForm, [event.target.name]: event.target.value });
 
+    const test = ({ username ='hoang'});
   const login = async (event) => {
     event.preventDefault();
     console.log(AuthContext);
