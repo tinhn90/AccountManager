@@ -1,0 +1,47 @@
+
+
+POST http://localhost:5000/api/auth/register
+Content-Type:  application/json
+
+{
+    "username":"tindkhoang2",
+    "password":"123"
+}
+###
+POST http://localhost:5000/api/auth/login
+Content-Type:  application/json
+
+{
+    "username":"tindkhoang2",
+    "password":"123"
+}
+###
+GET  http://localhost:5000/api/post
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGVkNTc0ZGFhZWY1MTEyNzBkYmZkZTEiLCJpYXQiOjE2MjYyNDY4Mzl9.5drPZ0N9kU-EtCNlQvu_JfOZmBGBXm5mCtcW-AhtUnY
+
+###
+POST http://localhost:5000/api/post
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGVkNTc0ZGFhZWY1MTEyNzBkYmZkZTEiLCJpYXQiOjE2MjYyNDY4Mzl9.5drPZ0N9kU-EtCNlQvu_JfOZmBGBXm5mCtcW-AhtUnY
+
+{
+    "title":"new post",
+    "description":"this is my 3 post",
+    "status":"Learning"
+}
+###
+DELETE  http://localhost:5000/api/post/60ee9816f71ffa1c2cfac680
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGVkNTc0ZGFhZWY1MTEyNzBkYmZkZTEiLCJpYXQiOjE2MjYyNDY4Mzl9.5drPZ0N9kU-EtCNlQvu_JfOZmBGBXm5mCtcW-AhtUnY
+
+###
+PUT  http://localhost:5000/api/post/60ef8c4b6ff6b51bc8cdce76
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGVkNTc0ZGFhZWY1MTEyNzBkYmZkZTEiLCJpYXQiOjE2MjYyNDY4Mzl9.5drPZ0N9kU-EtCNlQvu_JfOZmBGBXm5mCtcW-AhtUnY
+
+{
+    "title":"new post",
+    "description":"this is an update post",
+    "status":"Learning"
+}
