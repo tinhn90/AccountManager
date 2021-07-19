@@ -2,12 +2,13 @@ import { Route, Redirect } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import Spinner from "react-bootstrap/Spinner";
+import { NavBarMenu } from "../layout/NavBarMenu";
 
 const ProtectRoute = ({ component: Component, ...rest }) => {
   const {
     authState: { authLoading, isAuthenticated },
   } = useContext(AuthContext);
-
+  const { logoutUser } = useContext(AuthContext);
   if (authLoading)
     return (
       <div className="spinner-container">
@@ -21,6 +22,7 @@ const ProtectRoute = ({ component: Component, ...rest }) => {
       render={(props) =>
         isAuthenticated ? (
           <>
+            <NavBarMenu />
             <Component {...rest} {...props} />
           </>
         ) : (
