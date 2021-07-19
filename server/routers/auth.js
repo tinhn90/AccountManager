@@ -69,7 +69,6 @@ router.post("/login", async (req, res) => {
       .json({ success: false, message: "Missing username or password" });
   }
   try {
-    console.log(username + password + "find user ");
     const user = await User.findOne({ username });
 
     if (!user)

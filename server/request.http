@@ -31,7 +31,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGVkN
 
 {
     "title":"new post",
-    "description":"this is my 3 post",
+    "description":"learn from freeCodeCamp.com",
     "status":"Learning"
 }
 ###
