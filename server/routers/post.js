@@ -9,10 +9,10 @@ const verifytoken = require("../middleware/auth");
 router.get("/", verifytoken, async (req, res) => {
   var userId = req.userId;
   try {
-    const post = await Post.find({ user: userId }).populate("user", [
+    const posts = await Post.find({ user: userId }).populate("user", [
       "username",
     ]);
-    res.send(post);
+    res.json({ success: true, posts });
   } catch (error) {
     console.log("user not found");
   }

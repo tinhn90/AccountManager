@@ -31,8 +31,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGVkN
 
 {
     "title":"new post",
-    "description":"learn from freeCodeCamp.com",
-    "status":"Learning"
+    "description":"learn from google.com",
+    "status":"To Learn"
 }
 ###
 DELETE  http://localhost:5000/api/post/60ee9816f71ffa1c2cfac680
@@ -47,5 +47,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGVkN
 {
     "title":"new post",
     "description":"this is an update post",
-    "status":"Learning"
+    "status":"To Learn"
 }
